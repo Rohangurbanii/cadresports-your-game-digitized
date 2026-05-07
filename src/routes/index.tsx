@@ -32,7 +32,7 @@ function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               A Section 8 non-profit &middot; Promotion of Sports &amp; Games
             </div>
-            <h1 className="mt-6 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.95] tracking-tight text-balance">
+            <h1 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[0.95] tracking-tight text-balance">
               A full-stack
               <br />
               amateur sports
