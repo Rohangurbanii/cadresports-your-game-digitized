@@ -6,8 +6,8 @@ import fellowship from "@/assets/fellowship.jpg";
 import corporate from "@/assets/corporate.jpg";
 import olympics from "@/assets/olympics.jpg";
 import community from "@/assets/community.jpg";
-import communityBadminton from "@/assets/community-badminton.png";
-import communityFootball from "@/assets/community-football.png";
+import wellness from "@/assets/community-badminton.png";
+import streetSport from "@/assets/community-football.png";
 import { Marquee } from "@/components/site/Marquee";
 import { ArrowUpRight, Users, HeartPulse, Trophy, Sparkles, MapPin, Heart, GraduationCap, Monitor, QrCode, BarChart3, Film } from "lucide-react";
 
