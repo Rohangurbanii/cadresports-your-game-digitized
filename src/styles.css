@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap');
-
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap');
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -37,6 +37,7 @@
 :root {
   --radius: 0.75rem;
 
+  /* Brand: #00967B (teal), #0D0D0D (dark), #FFFFFF (white) */
   --primary: #00967B;
   --primary-foreground: #FFFFFF;
 
@@ -80,6 +81,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01";
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -99,58 +101,94 @@
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 
-  /* Scroll animations - elements are visible by default, animate when observed */
-  .scroll-reveal {
+  /* Scroll animations */
+  .scroll-fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateY(40px);
   }
 
-  .scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .scroll-fade-in.active {
+    animation: scroll-fade-in 0.8s ease-out forwards;
   }
 
-  .scroll-reveal-left {
+  @keyframes scroll-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scroll-slide-in-left {
     opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateX(-60px);
   }
 
-  .scroll-reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
+  .scroll-slide-in-left.active {
+    animation: scroll-slide-in-left 0.8s ease-out forwards;
   }
 
-  .scroll-reveal-right {
+  @keyframes scroll-slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .scroll-slide-in-right {
     opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: translateX(60px);
   }
 
-  .scroll-reveal-right.visible {
-    opacity: 1;
-    transform: translateX(0);
+  .scroll-slide-in-right.active {
+    animation: scroll-slide-in-right 0.8s ease-out forwards;
   }
 
-  .scroll-reveal-scale {
+  @keyframes scroll-slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .scroll-scale-in {
     opacity: 0;
-    transform: scale(0.96);
-    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    transform: scale(0.95);
   }
 
-  .scroll-reveal-scale.visible {
-    opacity: 1;
-    transform: scale(1);
+  .scroll-scale-in.active {
+    animation: scroll-scale-in 0.8s ease-out forwards;
   }
 
-  /* Stagger delay for children */
-  .stagger-1 { transition-delay: 0.1s; }
-  .stagger-2 { transition-delay: 0.2s; }
-  .stagger-3 { transition-delay: 0.3s; }
-  .stagger-4 { transition-delay: 0.4s; }
-  .stagger-5 { transition-delay: 0.5s; }
-  .stagger-6 { transition-delay: 0.6s; }
+  @keyframes scroll-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Stagger delay */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
 
   /* Marquee */
   .marquee {
@@ -164,6 +202,12 @@
 
   .ticker-fade {
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+
+  /* Gradient line */
+  .gradient-line {
+    background: linear-gradient(90deg, transparent, #00967B, transparent);
+    height: 1px;
   }
 
   /* Underline animation */
@@ -187,6 +231,16 @@
     width: 100%;
   }
 
+  /* Counter number animation */
+  @keyframes counter {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .counter-animate {
+    animation: counter 0.6s ease-out forwards;
+  }
+
   /* Pulse dot */
   .pulse-dot {
     animation: pulse-dot 2s ease-in-out infinite;
@@ -199,7 +253,7 @@
 
   /* Smooth border animation on hover */
   .border-animate {
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     border: 1px solid #E5E5E5;
   }
 
