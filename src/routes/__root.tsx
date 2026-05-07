@@ -14,12 +14,12 @@ import { Footer } from "@/components/site/Footer";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-4">
+    <div className="flex min-h-screen items-center justify-center bg-white px-4">
       <div className="max-w-md text-center">
-        <p className="font-display text-9xl font-bold text-primary/20">404</p>
+        <p className="font-display text-8xl font-bold text-primary/20">404</p>
         <h1 className="font-display text-3xl font-bold -mt-4">Page not found</h1>
-        <p className="mt-4 text-white/40">This page took an early shower.</p>
-        <Link to="/" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:glow-sm transition-all">
+        <p className="mt-4 text-foreground/40">This page took an early shower.</p>
+        <Link to="/" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary/90 transition-all">
           Back to home
         </Link>
       </div>
@@ -31,13 +31,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-4">
+    <div className="flex min-h-screen items-center justify-center bg-white px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-2xl font-bold">Something went sideways</h1>
-        <p className="mt-2 text-sm text-white/40">{error.message}</p>
+        <p className="mt-2 text-sm text-foreground/40">{error.message}</p>
         <button
           onClick={() => { router.invalidate(); reset(); }}
-          className="mt-6 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:glow-sm transition-all"
+          className="mt-6 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary/90 transition-all"
         >
           Try again
         </button>
@@ -51,11 +51,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CadreSports — Amateur Sports, Digitised" },
-      { name: "description", content: "India's full-stack amateur sports ecosystem. Weekly leagues, fellowship, corporate wellness, and the road to 2036." },
+      { title: "CadreSports — Your Game, Digitised" },
+      { name: "description", content: "India's digital platform for amateur sports. Weekly leagues, real-time data, and grassroots participation at scale." },
       { name: "theme-color", content: "#00967B" },
-      { property: "og:title", content: "CadreSports — Amateur Sports, Digitised" },
-      { property: "og:description", content: "Weekly leagues, fellowship, corporate wellness, and the road to 2036." },
+      { property: "og:title", content: "CadreSports — Your Game, Digitised" },
+      { property: "og:description", content: "Digital platform for weekly amateur leagues and community sports." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -73,7 +73,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-[#0D0D0D]">
+      <body className="bg-white">
         {children}
         <Scripts />
       </body>
@@ -85,7 +85,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col bg-[#0D0D0D] text-white">
+      <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">
           <Outlet />
