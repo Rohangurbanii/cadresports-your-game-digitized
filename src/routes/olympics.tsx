@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-const olympics = "https://images.pexels.com/photos/618612/pexels-photo-618612.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
+import olympics from "@/assets/olympics.jpg";
 
 export const Route = createFileRoute("/olympics")({
   head: () => ({

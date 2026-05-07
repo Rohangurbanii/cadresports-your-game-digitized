@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-const hero = "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1024&fit=crop";
-const badminton = "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const football = "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const fellowship = "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const corporate = "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const olympics = "https://images.pexels.com/photos/618612/pexels-photo-618612.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const community = "https://images.pexels.com/photos/1000154/pexels-photo-1000154.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop";
-const wellness = "https://images.pexels.com/photos/2262925/pexels-photo-2262925.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const streetSport = "https://images.pexels.com/photos/2606532/pexels-photo-2606532.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
+import hero from "@/assets/hero.jpg";
+import badminton from "@/assets/badminton.jpg";
+import football from "@/assets/football.jpg";
+import fellowship from "@/assets/fellowship.jpg";
+import corporate from "@/assets/corporate.jpg";
+import olympics from "@/assets/olympics.jpg";
+import community from "@/assets/community.jpg";
+import wellness from "@/assets/community-badminton.png";
+import streetSport from "@/assets/community-football.png";
 import { Marquee } from "@/components/site/Marquee";
 import { ArrowUpRight, Users, HeartPulse, Trophy, Sparkles, MapPin, Heart, GraduationCap, Monitor, QrCode, ChartBar as BarChart3, Film } from "lucide-react";
 

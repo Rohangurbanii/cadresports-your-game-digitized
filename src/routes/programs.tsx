@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-const badminton = "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const fellowship = "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const corporate = "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
-const community = "https://images.pexels.com/photos/1000154/pexels-photo-1000154.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&fit=crop";
+import badminton from "@/assets/badminton.jpg";
+import fellowship from "@/assets/fellowship.jpg";
+import corporate from "@/assets/corporate.jpg";
+import community from "@/assets/community.jpg";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
