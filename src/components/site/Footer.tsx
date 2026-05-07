@@ -3,41 +3,49 @@ import logo from "@/assets/logo.png";
 
 export function Footer() {
   return (
-    <footer className="border-t border-black/8 bg-gradient-to-b from-white to-slate-50">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8 py-16">
-        <div className="grid gap-12 md:grid-cols-4 mb-12">
+    <footer className="relative mt-24 overflow-hidden">
+      <div className="absolute inset-0 grid-bg opacity-50" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+
+      <div className="relative mx-auto max-w-7xl px-5 lg:px-8 py-16">
+        <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2.5">
-              <img src={logo} alt="CadreSports" className="h-10 w-10 rounded-md" width={40} height={40} />
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <img src={logo} alt="CadreSports" className="h-10 w-10 rounded-md" width={40} height={40} />
+                <div className="absolute -inset-1 rounded-lg glow-sm" />
+              </div>
               <span className="font-display text-2xl font-bold">CadreSports</span>
             </div>
-            <p className="mt-4 max-w-md text-sm text-foreground/60 leading-relaxed">
-              India's digital platform for amateur sports. Building the operating layer
-              that connects leagues, communities, and millions of players.
+            <p className="mt-4 max-w-md text-sm text-white/50 leading-relaxed">
+              India's digital platform for amateur sports. Building participation,
+              public health, leadership, and Olympic readiness across Maharashtra
+              one league at a time.
             </p>
-            <p className="mt-3 text-xs text-foreground/40">
-              Section 8 Non-Profit Company · Promotion of Sports & Games
+            <p className="mt-4 text-xs text-white/30">
+              CadreSports is a registered Section 8 non-profit company under the Companies Act, 2013.
             </p>
           </div>
           <div>
-            <h4 className="font-display text-xs uppercase tracking-wider font-semibold text-primary">Navigate</h4>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              <li><Link to="/" className="text-foreground/60 hover:text-foreground transition-colors underline-animate">Home</Link></li>
-              <li><Link to="/programs" className="text-foreground/60 hover:text-foreground transition-colors underline-animate">Leagues</Link></li>
-              <li><Link to="/contact" className="text-foreground/60 hover:text-foreground transition-colors underline-animate">Contact</Link></li>
+            <h4 className="font-display text-xs uppercase tracking-[0.2em] text-primary mb-4">Explore</h4>
+            <ul className="space-y-3 text-sm">
+              <li><Link to="/about" className="text-white/50 hover:text-primary transition-colors">About</Link></li>
+              <li><Link to="/programs" className="text-white/50 hover:text-primary transition-colors">Programmes</Link></li>
+              <li><Link to="/olympics" className="text-white/50 hover:text-primary transition-colors">Olympics 2036</Link></li>
+              <li><Link to="/contact" className="text-white/50 hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="font-display text-xs uppercase tracking-wider font-semibold text-primary">Connect</h4>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              <li className="text-foreground/60">hello@cadresports.com</li>
-              <li className="text-foreground/60">Nagpur, Maharashtra</li>
+            <h4 className="font-display text-xs uppercase tracking-[0.2em] text-primary mb-4">Connect</h4>
+            <ul className="space-y-3 text-sm text-white/50">
+              <li className="hover:text-white transition-colors">hello@cadresports.com</li>
+              <li>Pilot: Nagpur, Maharashtra</li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-black/8 pt-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-foreground/40">
+        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/30">
           <p>&copy; {new Date().getFullYear()} CadreSports. All rights reserved.</p>
-          <p>Section 8 · Promotion of Sports & Games</p>
+          <p>Section 8 &middot; Promotion of Sports & Games</p>
         </div>
       </div>
     </footer>
