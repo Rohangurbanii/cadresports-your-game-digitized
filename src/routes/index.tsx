@@ -300,7 +300,7 @@ function Home() {
         {/* Card 1 — Badminton / Participation & Habit */}
         <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden bg-card border border-border">
           <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden">
-            <img src={communityBadminton} alt="Community playing badminton" className="absolute inset-0 h-full w-full object-cover" />
+            <img src={wellness} alt="Morning run group — sport as wellness" className="absolute inset-0 h-full w-full object-cover" />
           </div>
           <div className="p-8 md:p-12 flex flex-col justify-center">
             <span className="inline-block rounded-full bg-primary/10 text-primary px-3 py-1 text-[10px] font-semibold uppercase tracking-wider w-fit mb-5">Well-designed amateur leagues</span>
@@ -357,7 +357,7 @@ function Home() {
             </ul>
           </div>
           <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden lg:order-2">
-            <img src={communityFootball} alt="Community playing football" className="absolute inset-0 h-full w-full object-cover" />
+            <img src={streetSport} alt="Amateur 3x3 basketball in an Indian city" className="absolute inset-0 h-full w-full object-cover" />
           </div>
         </div>
       </section>
