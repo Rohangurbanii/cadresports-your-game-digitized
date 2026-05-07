@@ -29,7 +29,7 @@ function Olympics() {
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] max-w-3xl">
             2036 starts at <span className="italic text-primary glow-text">the grassroots.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/50">
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             India is actively pursuing the 2036 Olympic bid. The grassroots foundation
             needs to exist before any Olympic moment arrives &mdash; and that foundation
             is built at the district level, not in stadiums.
@@ -43,13 +43,13 @@ function Olympics() {
           <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
             Building the operational cadre India needs.
           </h2>
-          <p className="mt-6 text-white/50 leading-relaxed text-lg">
+          <p className="mt-6 text-muted-foreground leading-relaxed text-lg">
             India cannot host the Olympics without an operating cadre several thousand strong.
             Every other aspect of preparation &mdash; infrastructure, athletes, funding &mdash;
             has existing machinery. The operating layer doesn't. CadreSports is the organisation
             positioned to build it from the district level up.
           </p>
-          <p className="mt-4 text-white/50 leading-relaxed text-lg">
+          <p className="mt-4 text-muted-foreground leading-relaxed text-lg">
             Whether Maharashtra hosts events or not, the state benefits from a deeper base
             of participation, trained volunteers, and experienced organisers. Our structured
             volunteer network, inclusive pathways, and post-Games community infrastructure
@@ -65,7 +65,7 @@ function Olympics() {
               <div key={label} className="rounded-2xl glass p-5 group hover:neon-border transition-all duration-300">
                 <Icon className="h-5 w-5 text-primary" />
                 <p className="mt-3 font-display text-xl font-bold">{label}</p>
-                <p className="mt-1 text-xs text-white/40">{desc}</p>
+                <p className="mt-1 text-xs text-muted-foreground/70">{desc}</p>
               </div>
             ))}
           </div>
@@ -75,12 +75,12 @@ function Olympics() {
           <div className="absolute inset-0 grid-bg opacity-20" />
           <div className="relative">
             <p className="font-display text-7xl font-bold">2036</p>
-            <p className="mt-2 text-sm uppercase tracking-[0.15em] text-white/70">Target Games</p>
-            <hr className="my-6 border-white/15" />
+            <p className="mt-2 text-sm uppercase tracking-[0.15em] text-foreground/70">Target Games</p>
+            <hr className="my-6 border-border" />
             <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/50 shrink-0" /><span><span className="font-semibold">36</span> districts with volunteer networks</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/50 shrink-0" /><span><span className="font-semibold">4</span> pilot sports building participation base</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-white/50 shrink-0" /><span><span className="font-semibold">Maharashtra</span> as the proving ground</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-muted0 shrink-0" /><span><span className="font-semibold">36</span> districts with volunteer networks</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-muted0 shrink-0" /><span><span className="font-semibold">4</span> pilot sports building participation base</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1 h-1.5 w-1.5 rounded-full bg-muted0 shrink-0" /><span><span className="font-semibold">Maharashtra</span> as the proving ground</span></li>
             </ul>
           </div>
         </aside>
@@ -93,12 +93,12 @@ function Olympics() {
             <h3 className="font-display text-3xl md:text-4xl font-bold">
               Contribute to India's Olympic readiness.
             </h3>
-            <p className="mt-3 max-w-xl text-white/50">
+            <p className="mt-3 max-w-xl text-muted-foreground">
               Whether through volunteering, partnership, or programme support &mdash;
               there are meaningful ways to participate in building India's sports future.
             </p>
           </div>
-          <Link to="/contact" className="inline-flex items-center gap-2 justify-self-start md:justify-self-end rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:glow-sm transition-all">
+          <Link to="/contact" className="inline-flex items-center gap-2 justify-self-start md:justify-self-end rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:glow-sm transition-all">
             Get involved <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

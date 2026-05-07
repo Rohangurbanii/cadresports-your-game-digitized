@@ -33,7 +33,7 @@ export function Header() {
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
               activeProps={{ className: "text-primary" }}
-              className="px-3 py-2 text-sm font-medium text-white/50 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-foreground/5"
             >
               {l.label}
             </Link>
@@ -43,7 +43,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition-all glow-sm hover:glow-md"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all glow-sm hover:glow-md"
           >
             Join a League
             <span className="inline-block transition-transform group-hover:translate-x-0.5">&rarr;</span>
@@ -51,7 +51,7 @@ export function Header() {
         </div>
 
         <button
-          className="md:hidden p-2 -mr-2 text-white/70"
+          className="md:hidden p-2 -mr-2 text-muted-foreground"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -60,7 +60,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/5 bg-[#0D0D0D]/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
           <nav className="px-5 py-4 flex flex-col gap-1">
             {links.map((l) => (
               <Link
@@ -69,7 +69,7 @@ export function Header() {
                 onClick={() => setOpen(false)}
                 activeOptions={{ exact: l.to === "/" }}
                 activeProps={{ className: "text-primary" }}
-                className="py-2.5 text-base font-medium text-white/60 hover:text-white transition-colors"
+                className="py-2.5 text-base font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {l.label}
               </Link>
@@ -77,7 +77,7 @@ export function Header() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground"
             >
               Join a League &rarr;
             </Link>

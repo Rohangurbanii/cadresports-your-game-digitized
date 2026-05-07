@@ -26,7 +26,7 @@ function About() {
           <h1 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] max-w-4xl text-balance">
             The <span className="italic text-primary glow-text">operating layer</span> for amateur sport in India.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg text-white/50">
+          <p className="mt-8 max-w-2xl text-lg text-muted-foreground">
             CadreSports is a Section 8 non-profit company focused on the promotion of
             sports and games. We aggregate leagues, participants, venues, and partners
             onto shared infrastructure &mdash; building the participation economy India needs.
@@ -45,18 +45,18 @@ function About() {
               <div className="text-center">
                 <Users className="h-16 w-16 text-primary/25 mx-auto" />
                 <p className="font-display text-4xl font-bold text-primary/15 mt-4">Why</p>
-                <p className="text-xs uppercase tracking-[0.2em] text-white/20 mt-2">We Exist</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/40 mt-2">We Exist</p>
               </div>
             </div>
           </div>
           <div>
             <h2 className="font-display text-3xl md:text-4xl font-bold">Why we exist</h2>
-            <p className="mt-4 text-white/50 leading-relaxed">
+            <p className="mt-4 text-muted-foreground leading-relaxed">
               India's sports economy is over-indexed toward elite narratives and tournament moments.
               Weekly amateur participation &mdash; the layer that in other countries produces adult
               health, community identity, and genuine talent funnels &mdash; barely exists at scale.
             </p>
-            <p className="mt-4 text-white/50 leading-relaxed">
+            <p className="mt-4 text-muted-foreground leading-relaxed">
               The state funds infrastructure that sits underused. Federations operate in parallel
               to communities. Schools produce drop-off, not continuity. CadreSports provides the
               shared rails that make each of these players more valuable.
@@ -85,7 +85,7 @@ function About() {
                   <span className="font-display text-sm text-primary font-semibold">{b.n}</span>
                 </div>
                 <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">{b.t}</h3>
-                <p className="mt-2 text-sm text-white/40">{b.d}</p>
+                <p className="mt-2 text-sm text-muted-foreground/70">{b.d}</p>
               </div>
             );
           })}
@@ -94,13 +94,13 @@ function About() {
         <div className="mt-16 rounded-3xl bg-primary p-10 md:p-14 relative overflow-hidden glow-md">
           <div className="absolute inset-0 grid-bg opacity-20" />
           <div className="relative">
-            <p className="text-xs uppercase tracking-[0.2em] text-white/70">Legal structure</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-foreground/70">Legal structure</p>
             <p className="mt-4 font-display text-2xl md:text-3xl max-w-3xl font-bold">
               CadreSports is incorporated as a <span className="underline decoration-white/30 underline-offset-4">Section 8 non-profit company</span> under
               the Companies Act, 2013 &mdash; focused on promotion of sports and games.
               Every rupee of surplus is reinvested into the ecosystem.
             </p>
-            <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white text-[#0D0D0D] px-6 py-3 text-sm font-semibold hover:bg-white/90 transition-all">
+            <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3 text-sm font-semibold hover:bg-foreground/90 transition-all">
               Partner with us <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

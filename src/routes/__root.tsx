@@ -14,12 +14,12 @@ import { Footer } from "@/components/site/Footer";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-4">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <p className="font-display text-9xl font-bold text-primary/20">404</p>
         <h1 className="font-display text-3xl font-bold -mt-4">Page not found</h1>
-        <p className="mt-4 text-white/40">This page took an early shower.</p>
-        <Link to="/" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:glow-sm transition-all">
+        <p className="mt-4 text-muted-foreground/70">This page took an early shower.</p>
+        <Link to="/" className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:glow-sm transition-all">
           Back to home
         </Link>
       </div>
@@ -31,13 +31,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[#0D0D0D] px-4">
+    <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-display text-2xl font-bold">Something went sideways</h1>
-        <p className="mt-2 text-sm text-white/40">{error.message}</p>
+        <p className="mt-2 text-sm text-muted-foreground/70">{error.message}</p>
         <button
           onClick={() => { router.invalidate(); reset(); }}
-          className="mt-6 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:glow-sm transition-all"
+          className="mt-6 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:glow-sm transition-all"
         >
           Try again
         </button>
@@ -73,7 +73,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body className="bg-[#0D0D0D]">
+      <body>
         {children}
         <Scripts />
       </body>
@@ -85,7 +85,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex min-h-screen flex-col bg-[#0D0D0D] text-white">
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
         <Header />
         <main className="flex-1">
           <Outlet />

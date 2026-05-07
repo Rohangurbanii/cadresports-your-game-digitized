@@ -60,7 +60,7 @@ function Programs() {
           <h1 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] max-w-4xl text-balance">
             Six pillars. <span className="italic text-primary glow-text">One ecosystem.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-white/50">
+          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             Each programme generates demand and data the next one consumes &mdash;
             starting with Maharashtra, scaling pan-India.
           </p>
@@ -81,7 +81,7 @@ function Programs() {
                       <div className="text-center">
                         <Icon className="h-12 w-12 text-primary/30 mx-auto" />
                         <p className="font-display text-7xl font-bold text-primary/15 mt-4">0{i + 1}</p>
-                        <p className="text-xs uppercase tracking-[0.2em] text-white/20 mt-2">{p.label}</p>
+                        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground/40 mt-2">{p.label}</p>
                       </div>
                     </div>
                   </div>
@@ -95,16 +95,16 @@ function Programs() {
                   <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
                     {p.tagline}
                   </h2>
-                  <p className="mt-5 text-white/50 leading-relaxed">{p.body}</p>
+                  <p className="mt-5 text-muted-foreground leading-relaxed">{p.body}</p>
                   <ul className="mt-6 grid sm:grid-cols-2 gap-3">
                     {p.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm text-white/50">
+                      <li key={b} className="flex items-start gap-2 text-sm text-muted-foreground">
                         <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
                         {b}
                       </li>
                     ))}
                   </ul>
-                  <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:glow-sm transition-all w-fit">
+                  <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:glow-sm transition-all w-fit">
                     Get involved <ArrowUpRight className="h-4 w-4" />
                   </Link>
                 </div>

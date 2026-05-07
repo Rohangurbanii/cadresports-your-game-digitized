@@ -27,7 +27,7 @@ function Contact() {
           <h1 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] max-w-4xl text-balance">
             Let's <span className="italic text-primary glow-text">connect.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-white/50">
+          <p className="mt-6 max-w-xl text-lg text-muted-foreground">
             Whether you represent a corporation, a federation, a district administration,
             or simply want to play &mdash; we'd like to hear from you.
           </p>
@@ -45,8 +45,8 @@ function Contact() {
           </div>
           <Field label="City" name="city" />
           <div>
-            <label className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">I'm interested in</label>
-            <select className="mt-2 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 transition-all" name="interest">
+            <label className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">I'm interested in</label>
+            <select className="mt-2 w-full bg-muted border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 transition-all" name="interest">
               <option>Joining a weekly league</option>
               <option>Corporate wellness programme</option>
               <option>CadreSports Fellowship</option>
@@ -57,13 +57,13 @@ function Contact() {
             </select>
           </div>
           <div>
-            <label className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">Tell us more</label>
-            <textarea rows={4} name="message" className="mt-2 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 transition-all resize-none" />
+            <label className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">Tell us more</label>
+            <textarea rows={4} name="message" className="mt-2 w-full bg-muted border border-border rounded-xl px-4 py-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 transition-all resize-none" />
           </div>
           <button
             type="submit"
             disabled={sent}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-white hover:glow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground hover:glow-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {sent ? "Thank you — we'll be in touch." : <>Send <Send className="h-4 w-4" /></>}
           </button>
@@ -74,19 +74,19 @@ function Contact() {
             <div className="absolute inset-0 grid-bg opacity-20" />
             <div className="relative">
               <Mail className="h-5 w-5" />
-              <p className="mt-3 text-xs uppercase tracking-[0.15em] text-white/70">Email</p>
+              <p className="mt-3 text-xs uppercase tracking-[0.15em] text-foreground/70">Email</p>
               <a href="mailto:hello@cadresports.com" className="mt-1 block font-display text-2xl font-bold hover:underline underline-offset-4">hello@cadresports.com</a>
             </div>
           </div>
           <div className="rounded-3xl glass p-8 neon-border">
             <MapPin className="h-5 w-5 text-primary" />
-            <p className="mt-3 text-xs uppercase tracking-[0.15em] text-white/40">Pilot cities</p>
+            <p className="mt-3 text-xs uppercase tracking-[0.15em] text-muted-foreground/70">Pilot cities</p>
             <p className="mt-1 font-display text-xl font-bold">Nagpur &middot; Pune &middot; Nashik</p>
           </div>
           <div className="rounded-3xl glass p-8">
             <Shield className="h-5 w-5 text-primary" />
             <p className="mt-3 text-xs uppercase tracking-[0.15em] text-primary">A note</p>
-            <p className="mt-3 text-white/60 text-sm leading-relaxed">
+            <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
               CadreSports is a registered Section 8 non-profit company under the Companies Act, 2013.
               CSR partnerships and institutional collaborations are welcome.
             </p>
@@ -100,12 +100,12 @@ function Contact() {
 function Field({ label, name, type = "text", required = false }: { label: string; name: string; type?: string; required?: boolean }) {
   return (
     <div>
-      <label className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40">{label}</label>
+      <label className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">{label}</label>
       <input
         name={name}
         type={type}
         required={required}
-        className="mt-2 w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 transition-all"
+        className="mt-2 w-full bg-muted border border-border rounded-xl px-4 py-3 text-sm text-white placeholder:text-muted-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/30 transition-all"
       />
     </div>
   );
