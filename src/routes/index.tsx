@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef } from "react";
 import { Marquee } from "@/components/site/Marquee";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { ArrowUpRight, Trophy, Users, Activity, Database, MapPin, Heart, GraduationCap, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -13,62 +13,35 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-function useScrollObserver() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return ref;
-}
-
 function Home() {
-  const heroRef = useScrollObserver();
-  const platformRef = useScrollObserver();
-  const leaguesRef = useScrollObserver();
-  const pillarsRef = useScrollObserver();
-  const ctaRef = useScrollObserver();
+  const scrollRef = useScrollReveal();
 
   return (
-    <div>
+    <div ref={scrollRef}>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-20 pb-32 lg:pt-32 lg:pb-40">
+      <section className="relative overflow-hidden pt-20 pb-28 lg:pt-32 lg:pb-40">
         <div className="absolute top-0 right-0 -z-10 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute bottom-20 left-0 -z-10 w-80 h-80 rounded-full bg-primary/3 blur-3xl" />
 
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-6 scroll-fade-in" ref={heroRef}>
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-6">
               <span className="h-1.5 w-1.5 rounded-full bg-primary pulse-dot" />
               Section 8 Non-Profit · Amateur Sports
             </div>
 
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-balance scroll-fade-in stagger-1">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-balance">
               Weekly leagues, real-time data,
               <br />
               <span className="text-primary">one platform.</span>
             </h1>
 
-            <p className="mt-6 text-lg text-foreground/60 max-w-2xl leading-relaxed scroll-fade-in stagger-2">
+            <p className="mt-6 text-lg text-foreground/60 max-w-2xl leading-relaxed">
               CadreSports is India's digital operating layer for amateur sports. Connect millions of players
               across weekly leagues, measure participation, and build grassroots sports culture at scale.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4 scroll-fade-in stagger-3">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/programs"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary/90 transition-all"
@@ -84,14 +57,14 @@ function Home() {
               </Link>
             </div>
 
-            <div className="mt-14 grid grid-cols-3 gap-8 max-w-lg scroll-fade-in stagger-4">
+            <div className="mt-14 grid grid-cols-3 gap-8 max-w-lg">
               {[
                 { number: "700+", label: "Active Players" },
                 { number: "4", label: "Sports" },
                 { number: "1", label: "Platform" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="font-display text-3xl md:text-4xl font-bold text-primary counter-animate">{stat.number}</p>
+                  <p className="font-display text-3xl md:text-4xl font-bold text-primary">{stat.number}</p>
                   <p className="mt-1 text-xs uppercase tracking-wider text-foreground/40 font-medium">{stat.label}</p>
                 </div>
               ))}
@@ -104,12 +77,12 @@ function Home() {
       <Marquee items={["Badminton", "Football", "Basketball", "Cricket", "Running", "Tennis", "Kabaddi", "Table Tennis"]} />
 
       {/* DIGITAL PLATFORM */}
-      <section className="relative py-24 lg:py-32 overflow-hidden" ref={platformRef}>
+      <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute top-1/2 -right-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
 
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="scroll-slide-in-left">
+            <div className="scroll-reveal-left">
               <p className="text-xs font-semibold uppercase tracking-wider text-primary">The Platform</p>
               <h2 className="font-display text-4xl lg:text-5xl font-bold mt-4 leading-tight">
                 One registration. One identity. Complete visibility.
@@ -136,7 +109,7 @@ function Home() {
               </ul>
             </div>
 
-            <div className="scroll-slide-in-right">
+            <div className="scroll-reveal-right">
               <div className="relative aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 p-8 overflow-hidden">
                 <div className="absolute inset-0 opacity-30" style={{
                   backgroundImage: "linear-gradient(rgba(0,150,123,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,150,123,0.1) 1px, transparent 1px)",
@@ -187,11 +160,11 @@ function Home() {
       </section>
 
       {/* LEAGUES */}
-      <section className="relative py-24 lg:py-32 bg-slate-50 border-y border-black/8" ref={leaguesRef}>
+      <section className="relative py-24 lg:py-32 bg-slate-50 border-y border-black/8">
         <div className="absolute top-0 left-0 -z-10 w-80 h-80 rounded-full bg-primary/3 blur-3xl" />
 
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="scroll-fade-in mb-16">
+          <div className="scroll-reveal mb-16">
             <p className="text-xs font-semibold uppercase tracking-wider text-primary">Amateur Leagues</p>
             <h2 className="font-display text-4xl lg:text-5xl font-bold mt-4 leading-tight">
               Weekly participation, community identity.
@@ -225,7 +198,7 @@ function Home() {
                 icon: <Database className="h-6 w-6" />,
               },
             ].map((item, i) => (
-              <div key={item.title} className="scroll-fade-in stagger-{i+1} rounded-2xl border border-black/8 p-8 bg-white border-animate">
+              <div key={item.title} className={`scroll-reveal stagger-${i + 1} rounded-2xl border border-black/8 p-8 bg-white border-animate`}>
                 <div className="text-primary mb-4">{item.icon}</div>
                 <h3 className="font-display text-xl font-bold">{item.title}</h3>
                 <p className="mt-2 text-foreground/60">{item.desc}</p>
@@ -236,9 +209,9 @@ function Home() {
       </section>
 
       {/* SIX PILLARS */}
-      <section className="relative py-24 lg:py-32" ref={pillarsRef}>
+      <section className="relative py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="scroll-fade-in mb-16">
+          <div className="scroll-reveal mb-16">
             <p className="text-xs font-semibold uppercase tracking-wider text-primary">Integrated Ecosystem</p>
             <h2 className="font-display text-4xl lg:text-5xl font-bold mt-4 leading-tight">
               Six movements, one platform.
@@ -254,7 +227,7 @@ function Home() {
               { num: "05", title: "Digital Infrastructure", desc: "Unified participant ID and real-time data" },
               { num: "06", title: "Olympic Movement", desc: "Volunteer networks and grassroots readiness for 2036" },
             ].map((pillar, i) => (
-              <div key={pillar.num} className="scroll-fade-in stagger-{i+1} rounded-2xl border border-black/8 p-6 bg-gradient-to-br from-white to-slate-50 border-animate group">
+              <div key={pillar.num} className={`scroll-reveal stagger-${i + 1} rounded-2xl border border-black/8 p-6 bg-gradient-to-br from-white to-slate-50 border-animate group`}>
                 <p className="text-sm font-display font-bold text-primary">{pillar.num}</p>
                 <h3 className="font-display text-lg font-bold mt-3 group-hover:text-primary transition-colors">{pillar.title}</h3>
                 <p className="mt-2 text-sm text-foreground/60">{pillar.desc}</p>
@@ -262,7 +235,7 @@ function Home() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-2xl border-2 border-primary/20 bg-primary/5 p-8 md:p-12 scroll-fade-in text-center">
+          <div className="mt-12 rounded-2xl border-2 border-primary/20 bg-primary/5 p-8 md:p-12 scroll-reveal text-center">
             <p className="text-foreground/60 max-w-2xl mx-auto">
               Each pillar generates demand and data that the next one uses. Leagues create participants.
               Community activation brings in women and seniors. Digital infrastructure connects them all.
@@ -273,13 +246,13 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 lg:py-32 bg-primary text-white overflow-hidden" ref={ctaRef}>
+      <section className="relative py-24 lg:py-32 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
           backgroundSize: "40px 40px"
         }} />
 
-        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 text-center scroll-fade-in">
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8 text-center scroll-reveal">
           <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight">
             Ready to play?
           </h2>

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Mail, MapPin, Send } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -14,9 +15,10 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  const scrollRef = useScrollReveal();
 
   return (
-    <div>
+    <div ref={scrollRef}>
       <section className="relative overflow-hidden pt-20 pb-16">
         <div className="absolute top-0 left-0 -z-10 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
 
@@ -37,7 +39,7 @@ function Contact() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8 grid lg:grid-cols-3 gap-12">
           <form
             onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-            className="lg:col-span-2 rounded-2xl bg-white border border-black/8 p-8 md:p-10 space-y-6 border-animate"
+            className="lg:col-span-2 rounded-2xl bg-white border border-black/8 p-8 md:p-10 space-y-6 border-animate scroll-reveal"
           >
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Your name" name="name" required />
@@ -67,7 +69,7 @@ function Contact() {
             </button>
           </form>
 
-          <aside className="space-y-5">
+          <aside className="space-y-5 scroll-reveal-right">
             <div className="rounded-2xl bg-primary text-white p-8 border-animate">
               <Mail className="h-5 w-5" />
               <p className="mt-3 text-xs uppercase tracking-wider text-white/70">Email</p>
@@ -78,7 +80,7 @@ function Contact() {
             <div className="rounded-2xl bg-white border border-black/8 p-8 border-animate">
               <MapPin className="h-5 w-5 text-primary" />
               <p className="mt-3 text-xs uppercase tracking-wider text-foreground/60">Pilot Cities</p>
-              <p className="mt-2 font-display text-lg font-bold">Nagpur &middot; Pune &middot; Nashik</p>
+              <p className="mt-2 font-display text-lg font-bold">Nagpur · Pune · Nashik</p>
             </div>
           </aside>
         </div>
